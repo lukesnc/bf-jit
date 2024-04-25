@@ -44,13 +44,9 @@ int main(int argc, char *argv[]) {
             break;
         case '+':
             memory[dp]++;
-            if (memory[dp] == 128)
-                memory[dp] = -128;
             break;
         case '-':
             memory[dp]--;
-            if (memory[dp] == 128)
-                memory[dp] = -128;
             break;
         case '.':
             printf("%c", memory[dp]);
