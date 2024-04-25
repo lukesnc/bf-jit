@@ -27,22 +27,30 @@ int main(int argc, char *argv[]) {
     }
 
     char memory[30000] = {0};
-    size_t ip, dp = 0;
+    int ip, dp = 0;
     Stack *loop_stack = create_stack();
 
     while (ip < strlen(argv[1])) {
         switch (argv[1][ip]) {
         case '>':
             dp++;
+            if (dp > 29999)
+                dp = 0;
             break;
         case '<':
             dp--;
+            if (dp < 0)
+                dp = 29999;
             break;
         case '+':
             memory[dp]++;
+            if (memory[dp] == 128)
+                memory[dp] = -128;
             break;
         case '-':
             memory[dp]--;
+            if (memory[dp] == 128)
+                memory[dp] = -128;
             break;
         case '.':
             printf("%c", memory[dp]);
