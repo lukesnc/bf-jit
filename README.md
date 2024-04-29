@@ -5,8 +5,8 @@ Brainfrick interpreter in C
 ## Build & Run
 
 ```bash
-make
-./build/bf {program}
+zig build
+./zig-out/bin/bf {program}
 ```
 
 ## Resources
