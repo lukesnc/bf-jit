@@ -1,11 +1,12 @@
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 typedef struct {
-    int top;
-    int array[9001];
+    int32_t top;
+    int32_t array[9001];
 } Stack;
 
 Stack *create_stack() {
@@ -14,11 +15,11 @@ Stack *create_stack() {
     return new;
 }
 
-void push(Stack *stack, int value) { stack->array[++stack->top] = value; }
+void push(Stack *stack, int32_t value) { stack->array[++stack->top] = value; }
 
-int pop(Stack *stack) { return stack->array[stack->top--]; }
+int32_t pop(Stack *stack) { return stack->array[stack->top--]; }
 
-int peek(Stack *stack) { return stack->array[stack->top]; }
+int32_t peek(Stack *stack) { return stack->array[stack->top]; }
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
@@ -26,8 +27,8 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    char memory[30000] = {0};
-    int ip, dp = 0;
+    int8_t memory[30000] = {0};
+    int32_t ip, dp = 0;
     Stack *loop_stack = create_stack();
 
     while (ip < strlen(argv[1])) {
