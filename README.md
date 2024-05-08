@@ -1,13 +1,14 @@
 # bf-jit
 
-Brainfrick interpreter in C
+Brainfrick interpreter in C (building with Zig!)
 
 ## Build & Run
 
 ```bash
-zig build
-./zig-out/bin/bf {program}
+zig build run -- {program}
 ```
+
+You will want to put the brainfrick program in 'single quotes'
 
 ## Resources
 
